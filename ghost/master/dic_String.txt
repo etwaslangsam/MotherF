@@ -1,0 +1,13 @@
+おすすめとか
+
+＠homeurl
+
+＃ネットワーク更新時にアクセスするアドレス。
+＃フォルダ名を記述、最後に/をつけてください。例のような形になります。
+＃例）http://satolist.sakura.ne.jp/satolist_template/
+
+＊sakura.recommendsites
+
+
+＊sakura.portalsites
+

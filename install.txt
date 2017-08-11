@@ -1,0 +1,5 @@
+charset,Shift_JIS
+name,ƒ}ƒ}‚Í–`Œ¯ŽÒ
+type,ghost
+directory,MotherF
+refresh,0
