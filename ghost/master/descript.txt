@@ -7,7 +7,7 @@ craftmanurl,https://sites.google.com/site/p5zxftwc/
 readme,readme.txt
 sakura.name,ママ
 kero.name,ママの友達
-sakura.seriko.defaultsurface,0
+sakura.seriko.defaultsurface,20
 kero.seriko.defaultsurface,10
 balloon.defaultsurface,0
 seriko.alignmenttodesktop,bottom
@@ -22,7 +22,7 @@ shiori.encoding,0
 don't need onmousemove,0
 don't need bind,0
 don't need seriko talk,0
-balloon.dontmove,False
+balloon.dontmove,True
 shiori,satori.dll
 
 
