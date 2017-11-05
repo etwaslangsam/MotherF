@@ -3,7 +3,6 @@ name,ママは冒険者
 type,ghost
 craftman,etwaslangsam
 craftmanw,牧野信次
-craftmanurl,https://sites.google.com/site/p5zxftwc/
 readme,readme.txt
 sakura.name,ママ
 kero.name,ママの友達
@@ -22,7 +21,7 @@ shiori.encoding,0
 don't need onmousemove,0
 don't need bind,0
 don't need seriko talk,0
-balloon.dontmove,True
+balloon.dontmove,False
 shiori,satori.dll
 
 
