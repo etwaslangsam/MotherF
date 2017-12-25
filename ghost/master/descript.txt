@@ -3,6 +3,7 @@ name,ママは冒険者
 type,ghost
 craftman,etwaslangsam
 craftmanw,牧野信次
+craftmanurl,https://hotpepar.blogspot.jp/
 readme,readme.txt
 sakura.name,ママ
 kero.name,ママの友達
