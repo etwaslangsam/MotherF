@@ -3,3 +3,4 @@ name,ƒ}ƒ}‚Í–`Œ¯ŽÒ
 type,ghost
 directory,MotherF
 refresh,0
+robots,noindex
