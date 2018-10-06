@@ -2,7 +2,12 @@
 
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/MotherF/master/
-
+＃────────
+＃おすすめサイト
+＃────────
+＊sakura.recommendsites
+DLsite.com 同人RPGゲーム
+http://www.dlsite.com/maniax/fsr/=/work_type/RPG/work_category/doujin/from/left_pain.work_type
 
 ＃────────
 ＃ポータルサイト
