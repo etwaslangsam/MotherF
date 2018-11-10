@@ -2,3 +2,4 @@
 .git/,nonar,noupdate
 ghost/master/satori_savedata.txt,nonar,noupdate
 ghost/master/satori_savebackup.txt,nonar,noupdate
+ghost/master/dic_replay.txt,nonar,noupdate
