@@ -1,3 +1,4 @@
+ghost\master\dic_replay.txt
 ghost\master\dic_Time.txt
 shell\master\surface0.apng
-ghost\master\dic_replay.txt
+shell\master\surface00.apng

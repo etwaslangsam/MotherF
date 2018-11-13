@@ -16,6 +16,13 @@
 ＄自動アンカー	無効
 ＄時報設定	０
 ＄メニューサイズ	0
+＄狸装備	0
+＄犬装備	0
+＄漆黒装備	5
+＄狐装備	0
+＄猫装備	0
+＄白金装備	5
+＄現在シェル	master
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
