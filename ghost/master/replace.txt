@@ -1,5 +1,5 @@
 ？	？\w3
 ！	！\w3
-。	。\w5
+（はーと）	\f[name,メイリオ]\f[color,deeppink]\_u[0x2665]\f[default]
 
 ＃　ウェイトを全角で打てるようにする
