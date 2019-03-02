@@ -14,7 +14,6 @@
 ＄0ちくピフラグ	1
 ＄1ちくピフラグ	1
 ＄自動アンカー	無効
-＄時報設定	０
 ＄メニューサイズ	0
 ＄狸装備	0
 ＄犬装備	0
@@ -23,6 +22,8 @@
 ＄猫装備	0
 ＄白金装備	5
 ＄現在シェル	master
+＄0淫具装備	0
+＄1淫具装備	0
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
