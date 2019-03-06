@@ -318,6 +318,7 @@
 
 ＊OnUpdateComplete
 ＞ネットワーク更新（Reference0）
+＄辞書リロード	実行
 ：\s[5]成功したよ。
 
 ＊ネットワーク更新none
