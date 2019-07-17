@@ -3,108 +3,85 @@
 ＃────────
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
-\e
 
 ＊OnMouseWheel
 ＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
 ＞（Reference3）（Reference4）ころころ下方向	（Reference2）＜０
 ＞（Reference3）（Reference4）ころころ
-\e
 
 ＊OnMouseHover
 ＄（Reference3）（Reference4）見つめタイマ	３
-\e
 
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
-\e
 
 ＃────────
 ＃■シェル変更
 ＃────────
 ＊OnShellChanging
-\0\s[21]ちょっと待っててね？
-\e
+\0\s[21]ちょっと待っててね？\e
 
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
 \0\s[23]ん。\w5
-いい子にしてた？
-\e
-
+いい子にしてた？\e
 
 ＃────────
-＃最小化解除
+＃■最小化解除
 ＃────────
 ＊OnWindowStateRestore
 \0\s[4]はぁ……やっと出られた……
-\1\s[111]なんだよ～もう出ちゃうのかよ～？
+\1\s[111]なんだよ～もう出ちゃうのかよ～？\e
+
+＃────────
+＃■スリーブ解除
+＃────────
+＊OnSysResume
+\0\s[5]おはよう、（ユーザ名）。
+\1\s[15]よく眠れたか？\e
 
 ＃────────
 ＃時計合わせ
 ＃────────
 ＊OnSNTPBegin
-：（Reference0）から正しい時間を取得中。
+\0（Reference0）
 
 ＊OnSNTPCompare
-：サーバ　　（Reference1）
-ローカル　（Reference2）
-＞時計時間ぴったり	（Reference3）＝＝0
-＞時計のずれが少し	（Reference3）＜5
-：えーと、（Reference3）秒ずれてますね。合わせますか？
+\6
 
-＿◯合わせる	時間を合わせる
-＿◯合わせない	時間を合わせない
-
-＊時間を合わせる
-：\6合わせたよ。
-
-＊時間を合わせない
-：じゃ、放っておくね。
-＊時計時間ぴったり
-：ぴったり合ってるよ。
-：さすがですね。
-＊時計のずれが少し
-：（Reference3）秒ずれてるけど……これは誤差かな。
-
-＿◯合わせる	時間を合わせる
-＿◯合わせない	時間を合わせない
 ＊OnSNTPCorrect
-：時間を合わせたよ。
 
 ＊OnSNTPFailure
-：失敗……繋がらない？
 
 ＃────────
 ＃インストール
 ＃────────
 ＊OnInstallBegin
-：\s[20]インストールするね。
+\0\s[20]インストールするね。
 
 ＊OnInstallComplete
 ＞（Reference0）インストール
-：\s[0]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしたよ。
+\0\s[0]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしたよ。
 \e
 
 ＊ghostインストール
 \0\s[21]あら、新しい子が来たみたいね。
-\s[25]お友達になれるといいわね（ユーザ名）。
+\s[25]お友達になれるといいわね（ユーザ名）。\n[half]
 \1\s[115]裸の付き合いをすれば一発だ。
-\0\s[7]\cダメに決まってんでしょ！
-\e
+\0\s[7]ダメに決まってんでしょ！\e
 
 ＊sellインストール
-：\s[3]ん？\w3 新しい装備？
-：\s[13]え～？\w5
-着込む系は嫌だぞ？
+\0\s[3]ん？\w3 新しい装備？
+\1\s[13]え～？\w5
+着込む系は嫌だぞ？\e
 
 ＊OnInstallFailure
-：\s[4]失敗みたい。
-：\s[10]原因は「（Reference0）」だそうだ
+\0\s[4]失敗みたい。
+\1\s[10]原因は「（Reference0）」だそうだ\e
 
 ＊OnInstallRefuse
-：\s[4]これ、「（replace（バイト値,１）（Reference0）（バイト値,１）\（バイト値,１）\\）」さんのみたいだよ。
-本人に渡してあげてね。
+\0\s[4]これ、「（replace（バイト値,１）（Reference0）（バイト値,１）\（バイト値,１）\\）」さんのよ。
+本人に渡してあげてね。\e
 
 ＃────────
 ＃ダウンロード
@@ -235,11 +212,3 @@
 ＞（Reference0）
 \0\s[3]選択肢（Reference0）は存在しないみたい
 \e
-
-＃────────
-＃時間イベント
-＃────────
-＊OnMinuteChange
-\e
-
-
