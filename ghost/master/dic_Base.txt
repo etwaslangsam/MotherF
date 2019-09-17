@@ -1,6 +1,6 @@
 ＊OnSatoriLoad
-＄文「＊」の重複回避	有効、起動中
-＄単語群「＊」の重複回避	有効、起動中
+＄文「＊」の重複回避	直前、起動中
+＄単語群「＊」の重複回避	直前、トーク中
 ＄さくらスクリプトによるスコープ切り換え時	
 ＄自動挿入ウェイトタイプ	一般
 ＄自動アンカー	無効
@@ -21,7 +21,6 @@
 ＃■起動
 ＃────────
 ＊OnBoot
-（when、（現在シェル）==master、\0\![bind,装備,ちくびピアス,1]\![bind,下着,パンツ,0]\1\![bind,装備,ちくびピアス,1]）
 ＞夜起動	（現在時）＜４
 ＞朝起動	（現在時）＜１０
 ＞起動
@@ -149,30 +148,23 @@
 ＞再読込する	（compare,（Reference0）,ママ）
 ＞（Reference0）に交代
 ＞OnClose
-\e
 
 ＊OnGhostChanged
 ＞再読込した	（compare,（Reference0）,ママ）
 ＞（Reference0）から交代
 ＞OnBoot
-\e
 
 ＊再読込する
 \0\s[20]ちょっと待っててね？\_w[1000]
 
 ＊再読込した
-\0\s[22]はいお待たせ。
-\e
-
+\0\s[22]はいお待たせ。\e
 
 ＃────────
 ＃Resources
 ＃────────
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/MotherF/master/
-
-＠portalrootbutton.caption
-配布サイト
 
 ＃────────
 ＃おすすめサイト
@@ -185,13 +177,54 @@ http://www.dlsite.com/maniax/fsr/=/work_type/RPG/work_category/doujin/from/left_
 ＃ポータルサイト
 ＃────────
 ＊sakura.portalsites
+配布サイト
+
+＊sakura.portalsites
 ほっとぺっぱぁ団
-http://ghosthacking.webcrow.jp/index.html
+https://hotpepar.blogspot.com/
 
 
 ＊sakura.portalsites
-メッセージフォーム
+連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＊sakura.portalsites
+-
+
+＊sakura.portalsites
+独立伺か研究施設 ばぐとら研究所
+http://ssp.shillest.net/
+
+
+＊sakura.portalsites
+Disc-2
+http://disc2.s56.xrea.com/
+
+
+＊sakura.portalsites
+伺か情報ブログ「ghost-log」
+https://ghost-log.net/
+
+
+＊sakura.portalsites
+ゴーストキャプターさくら
+http://buynowforsale.shillest.net/ghosts/
+
+
+＊sakura.portalsites
+ゴースト回覧板3rd
+http://jbbs.shitaraba.net/computer/44300/
+
+
+＊sakura.portalsites
+伺的な感想やレビューのWiki
+https://ghost-info.net/dokuwiki/doku.php
+
+
+＊sakura.portalsites
+噂と評判[改] 過去ログ保管庫+
+https://ghostreview.sakura.ne.jp/
 
 
 ＃────────

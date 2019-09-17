@@ -170,32 +170,29 @@
 ＃入力
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-\e
 
 ＃────────
 ＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
-\e
 
 ＊rが押された
 ＄辞書リロード	実行
-\1\s[（デフォルトサーフェス1）]\0\s[（デフォルトサーフェス0）]リロードしたよ。
-\e
+\1\s[（デフォルトサーフェス1）]\0\s[（デフォルトサーフェス0）]リロードしたよ。\e
 
 ＊mが押された
 ＞メインメニュー
 
 ＊tが押された
-＞PleaseTalk
+（）
 
 ＃────────
 ＃■選択肢
