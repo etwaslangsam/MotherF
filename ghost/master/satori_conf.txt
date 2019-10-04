@@ -23,6 +23,7 @@
 ＄現在シェル	master
 ＄0淫具装備	0
 ＄1淫具装備	0
+＄ダンジョン階層	１
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
