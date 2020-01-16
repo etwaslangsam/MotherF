@@ -105,9 +105,9 @@
 ＞（Reference3）（Reference4）ころころ
 
 ＊OnMouseHover
-＄（Reference3）（Reference4）見つめタイマ	３
+＄（Reference3）（Reference4）見つめタイマ	１
 
-＊OnMouseEnterAll	（compare,（Status）,talk）==0
+＊OnMouseEnterAll	（Status）!=talking
 ＞（Reference3）にカーソル
 
 ＊0にカーソル
@@ -118,19 +118,21 @@
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
+＊OnMouseDragStart
+＞（Reference3）移動開始
 
-＃────────
-＃時計合わせ
-＃────────
-＊OnSNTPBegin
-\0（Reference0）
+＊0移動開始
+\0\s[5]どこに連れて行ってくれるの？\e
+＊1移動開始
+\1\s[11]お？\w3 とうとうヤるか？\e
 
-＊OnSNTPCompare
-\6
+＊OnMouseDragEnd
+＞（Reference3）移動終了
 
-＊OnSNTPCorrect
-
-＊OnSNTPFailure
+＊0移動終了
+\0\s[20]ここでいいの？\e
+＊1移動終了
+\1\s[19]こ、こんな所でするのか？\e
 
 ＃────────
 ＃インストール
@@ -140,8 +142,7 @@
 
 ＊OnInstallComplete
 ＞（Reference0）インストール
-\0\s[0]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしたよ。
-\e
+\0\s[0]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしたよ。\e
 
 ＊ghostインストール
 \0\s[21]あら、新しい子が来たみたいね。
@@ -163,29 +164,47 @@
 本人に渡してあげてね。\e
 
 ＃────────
-＃ダウンロード
+＃ファイルドロップ
+＃────────
+＊OnUpdatedataCreating
+\0\s[21]更新ファイルを作成するね。
+
+＊OnUpdatedataCreated
+\0\s[22]更新ファイルを作成したよ。\w5
+更新するの？\w3 えらいえらい（はーと）\e
+
+＊OnNarCreating
+\0\s[21]narファイルを作るよ。
+
+＊OnNarCreated
+\0\s[22]narファイルが出来上がったよ！\w5
+すごいね～（ユーザ名）は（はーと）\e
+
+＃────────
+＃URLドロップイベント
 ＃────────
 ＊OnURLDropping
-：\s[0]「（Reference0）」からダウンロードするね。
+\0\s[0]「（Reference0）」からダウンロードするね。
 
 ＊OnURLDropped
-：\s[5]ダウンロードが終わったよ。
-：\s[10]ファイルは「（Reference0）」にあるぞ
+\0\s[5]ダウンロードが終わったよ。
+\1\s[10]ファイルは「（Reference0）」にあるぞ。\e
 
 ＊OnURLDropFailure
-：\s[4]ダウンロードに失敗・・・。
-：\s[10]原因は「（Reference1）」だそうだ
+\0\s[4]ダウンロードに失敗・・・。
+\1\s[10]原因は「（Reference1）」だそうだ。\e
 
 ＃────────
 ＃ネットワーク更新
 ＃────────
 ＊OnUpdateBegin
-：\s[20]更新情報を取得中してるよ。
+\0\s[20]更新情報を取得中してるよ。
 
 ＊OnUpdateReady
-：\s[20]（Reference0）個のファイルが更新されてるね。
+\0\s[20]（Reference0）個のファイルが更新されてるね。
 （when,（Reference0）＞４,\s[22]すごい！\w3 いっぱい来たね～（ユーザ名）！）
-：\s[18]はい、じゃあアイテム鑑定しま～す。
+\1\s[18]はい、じゃあファイル鑑定しま～す。
+
 
 ＊OnUpdate.OnMD5CompareComplete
 \1\s[10]\_q（Reference1）
@@ -199,54 +218,146 @@
 \_q
 （Reference0）問題あり。
 
+
 ＊OnUpdateComplete
 ＞ネットワーク更新（Reference0）
 ＄辞書リロード	実行
-：\s[5]成功したよ。
+\0\s[5]成功したよ。
 
 ＊ネットワーク更新none
-：\s[3]更新されてないね。
+\0\s[20]更新はなかったみたい。\e
 
 ＊ネットワーク更新changed
-：\s[21]ネットワーク更新、無事終了したよ。
+\0\s[21]更新完了。
+\1\s[15]呪われた更新ファイルはなかったようだな。\e
+
 
 ＊OnUpdateFailure
 ＞ネットワーク更新（Reference0）
-：\s[4]ネットワーク更新に失敗しちゃった。
-：\s[10]理由は（Reference0）だそうだ。
+\0\s[4]ネットワーク更新に失敗しちゃった。
+\1\s[10]理由は（Reference0）だそうだ。\e
 
 ＊ネットワーク更新timeout
-：\s[3]時間切れみたい。
+\0\s[3]時間切れみたい。
 重すぎてファイルが落ちてこないよ。
-：\s[10]更新先URLが間違っていて、サーバが存在しない可能性もあるな。
+\1\s[10]更新先URLが間違っていて、サーバが存在しない可能性もあるな。\e
 
 ＊ネットワーク更新md5 miss
-：\s[3]データが一致しなかったよ。
-回線状態が悪いのか、updates2.dauがおかしいのかも。
+\0\s[3]データが一致しなかったよ。
+回線状態が悪いのか、updates2.dauがおかしいのかも。\e
 
 ＊ネットワーク更新404
-：\s[4]更新用ファイルが見つからなかったよ。
+\0\s[4]更新用ファイルが見つからなかったよ。\e
 
 ＊ネットワーク更新artificial
-：\s[3]中断するよ。
+\0\s[3]中断するよ。\e
 
 ＃────────
-＃ファイル作成
+＃時計合わせ
 ＃────────
-＊OnUpdatedataCreating
+＊OnSNTPBegin
+\0（Reference0）
 
-＊OnUpdatedataCreated
-：\s[5]更新したの？\w3 えらいえらい（はーと）
+＊OnSNTPCompare
+＞ズレなし	（Reference3）==0
+\6
 
-＊OnNarCreating
-：\s[5]narファイルを作るよ。
+＊ズレなし
+\e
 
-＊OnNarCreated
-：\s[22]narファイルが出来上がったよ！
-すごいね～（ユーザ名）は（はーと）
+＊OnSNTPCorrect
+\0\s[21]（Reference3）秒のズレを修正したよ。\e
+
+＊OnSNTPFailure
+\0\s[3]サーバとの接続に失敗したみたい。\e
 
 ＃────────
-＃■キー押下
+＃メールチェック
+＃────────
+＊OnBIFFBegin
+\0\s[21]（Reference2）のメールをチェックするね。
+
+＊OnBIFFComplete
+＞メールなし	（Reference0）==0
+＞メールが増えた	（Reference3）＞0
+\0\s[22]未読メールが（Reference0）件あるよ。
+\_q
+ \![*]\q[メーラーを開く,メーラーを開く]
+ \![*]\q[なにもしない,なにもしない]
+\_q\e
+
+＊メールが増えた
+\0\s[22]新着メールが（Reference3）件あるよ。
+\_q
+ \![*]\q[メーラーを開く,メーラーを開く]
+ \![*]\q[なにもしない,なにもしない]
+\_q\e
+
+＊メールなし
+\0\s[20]メールはないみたい。\e
+
+＊メーラーを開く
+\![open,mailer,]
+＊なにもしない
+\0\e
+
+＃────────
+＃ヘッドライン
+＃────────
+＊OnHeadlinesenseBegin
+\0\s[20]（Reference0）を巡回中…
+
+＊OnHeadlinesense.OnFind
+＞読み上げフェーズ（Reference2）
+
+＊読み上げフェーズFirst
+\0\b[2]（Reference0）\![set,autoscroll,disable]\n[half]
+（Reference3）
+＿続きを読む		
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズFirst and Last
+\0\b[2]（Reference0）\![set,autoscroll,disable]\n[half]
+（Reference3）
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズLast
+\0\b[2]\![set,autoscroll,disable]（Reference3）
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズNext
+\0\b[2]\![set,autoscroll,disable]（Reference3）
+＿続きを読む		
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊サイトを開く
+\![open,browzer,]
+＊読み上げ中止
+\0\e
+
+＊OnHeadlinesenseComplete
+\0\s[3]新着記事はないみたい。\e
+
+＃────────
+＃見切れ・重なりイベント
+＃────────
+＊OnOverlap
+＞重なった	（重なり状態）==0
+＄重なり状態	０
+
+＊重なった
+＄重なり状態	１
+\0\s[4]ちょっと……離れてよ。\n
+\1\s[19]ちょっとだけ……いいだろ？\n
+\0\s[9]（ユーザ名）の前でダメに決まってるでしょ！
+\1\s[14]\4ちぇ～……。\e
+
+＃────────
+＃キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
@@ -260,6 +371,3 @@
 
 ＊tが押された
 （）
-
-
-
