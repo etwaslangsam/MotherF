@@ -1,4 +1,99 @@
 ＃────────
+＃シェル変更
+＃────────
+＊OnShellChanging
+＞（Reference0）に変更する
+\0\s[21]ちょっと待っててね？\e
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＞（Reference0）に変更した
+\0\s[23]ん。\w5
+いい子にしてた？\e
+
+＊あぶない装備に変更した
+\1\s[11]（ユーザ名）にはちょっと刺激が強すぎるかもしれんな。\e
+
+＃────────
+＃バルーン変更
+＃────────
+＊OnBalloonChange
+\0\s[20]バルーン「（Reference0）」を装備したよ。\e
+
+＃────────
+＃最小化解除
+＃────────
+＊OnWindowStateRestore
+\0\s[4]はぁ……やっと出られた……
+\1\s[111]なんだよ～もう出ちゃうのかよ～？\e
+
+＃────────
+＃スリーブ解除
+＃────────
+＊OnSysResume
+\0\s[5]おはよう、（ユーザ名）。
+\1\s[15]よく眠れたか？\e
+
+＃────────
+＃入力
+＃────────
+＊OnCommunicate
+≫ユーザ「　（Reference1）	（compare,（Reference0）,user）
+
+＊OnUserInput
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＃────────
+＃時間イベント
+＃────────
+＊OnHourTimeSignal
+＞時報	（TimeSignal）
+
+＊時報
+\![set,trayballoon,--text=ママは冒険者,--title=（現在時）時,--icon=info,--timeout=3]
+
+＃────────
+＃■選択肢
+＃────────
+＊OnChoiceSelectEx
+＄選択ＩＤ	（Reference1）
+＄選択ラベル	（Reference0）
+＞（Reference1）
+＞選択先がない
+
+＊OnChoiceSelect
+＞（Reference0）
+＞選択先がない
+
+＊OnChoiceTimeout
+\0\s[4]ガーン、無視……。\e
+
+＊OnAnchorSelectEx
+＄選択ＩＤ	（Reference1）
+＄選択ラベル	（Reference0）
+＞（Reference1）
+＞選択先がない
+
+＊OnAnchorSelect
+＞（Reference0）
+＞選択先がない
+
+＊選択先がない
+\0\s[3]選択肢（Reference0）は存在しないみたい\e
+
+＃────────
+＃サーフェスイベント
+＃────────
+＊OnSurfaceRestore
+\0\s[20]\1\s[10]\e
+
+＃────────
 ＃マウスイベント
 ＃────────
 ＊OnMouseDoubleClick
@@ -12,33 +107,17 @@
 ＊OnMouseHover
 ＄（Reference3）（Reference4）見つめタイマ	３
 
+＊OnMouseEnterAll	（compare,（Status）,talk）==0
+＞（Reference3）にカーソル
+
+＊0にカーソル
+\0\s[5]\e
+＊1にカーソル
+\1\s[15]\e
+
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
-＃────────
-＃■シェル変更
-＃────────
-＊OnShellChanging
-\0\s[21]ちょっと待っててね？\e
-
-＊OnShellChanged
-＄現在シェル	（Reference0）
-\0\s[23]ん。\w5
-いい子にしてた？\e
-
-＃────────
-＃■最小化解除
-＃────────
-＊OnWindowStateRestore
-\0\s[4]はぁ……やっと出られた……
-\1\s[111]なんだよ～もう出ちゃうのかよ～？\e
-
-＃────────
-＃■スリーブ解除
-＃────────
-＊OnSysResume
-\0\s[5]おはよう、（ユーザ名）。
-\1\s[15]よく眠れたか？\e
 
 ＃────────
 ＃時計合わせ
@@ -167,18 +246,6 @@
 すごいね～（ユーザ名）は（はーと）
 
 ＃────────
-＃入力
-＃────────
-＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-
-＃────────
 ＃■キー押下
 ＃────────
 ＊OnKeyPress
@@ -194,24 +261,5 @@
 ＊tが押された
 （）
 
-＃────────
-＃■選択肢
-＃────────
-＊OnChoiceSelect
-＞（Reference0）
-\0\s[3]選択肢（Reference0）は存在しないみたい
-\e
-＊OnChoiceTimeout
-\0\s[4]ガーン、無視……。
-\e
 
-＊OnAnchorSelect
-＞（Reference0）
-\0\s[3]選択肢（Reference0）は存在しないみたい
-\e
 
-＊OnHourTimeSignal
-＞時報	（TimeSignal）
-
-＊時報
-\![set,trayballoon,--text=ママは冒険者,--title=（現在時）時,--icon=info,--timeout=3]
