@@ -209,3 +209,9 @@
 ＞（Reference0）
 \0\s[3]選択肢（Reference0）は存在しないみたい
 \e
+
+＊OnHourTimeSignal
+＞時報	（TimeSignal）
+
+＊時報
+\![set,trayballoon,--text=ママは冒険者,--title=（現在時）時,--icon=info,--timeout=3]
