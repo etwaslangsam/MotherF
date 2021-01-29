@@ -3,3 +3,4 @@ ghost\master\dic_Time.txt
 shell\master\surface00.apng
 ghost\master\dic_String.txt
 shell\master\readme2.txt
+.gitignore
