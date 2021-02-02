@@ -22,7 +22,6 @@ sakura.menuitem8,2
 sakura.bindgroup0.name,下着,パンツ,pantsu
 sakura.bindgroup0.default,0
 
-sakura.bindoption0.group,装備,mustselect
 sakura.bindgroup1.name,装備,布の服,tikupi
 sakura.bindgroup1.default,0
 sakura.bindgroup2.name,装備,ちくびピアス,chain
@@ -52,7 +51,6 @@ kero.menuitem5,-
 kero.menuitem6,1
 kero.menuitem7,0
 
-kero.bindoption0.group,装備,mustselect
 kero.bindgroup0.name,装備,布の服,strings
 kero.bindgroup0.default,0
 kero.bindgroup1.name,装備,ちくびピアス,strings

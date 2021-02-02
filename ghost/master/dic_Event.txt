@@ -16,6 +16,9 @@
 ＄もちもの	
 ＄時報設定	
 ＄メニューサイズ	
+＄0ちくピフラグ	
+＄1ちくピフラグ	
+＄重なり状態	
 ＄手動セーブ	実行
 
 ＃────────
@@ -44,6 +47,8 @@
 ＃────────
 ＃最小化解除
 ＃────────
+＊OnWindowStateMinimize
+＄手動セーブ	実行
 ＊OnWindowStateRestore
 ＄手動セーブ	実行
 ＞最小化解除
@@ -51,19 +56,15 @@
 ＊最小化解除
 \1\s[15]いやー、美味かった。
 \0\s[3]食べすぎよアンタ。\e
-
 ＊最小化解除
 \0\s[21]んー、サッパリした！
 \1\s[18]どうせまた直ぐグチョヌルになるぞ。\e
-
 ＊最小化解除
 \0\s[1]アンタほんとに容赦ないわね。
 \1\s[19]まだシ足りないぐらいだ。\e
-
 ＊最小化解除
 \0\s[34]はぁ‥‥はぁ‥‥（はーと）
 \1\s[44]はぁ～～～～（はーと）\e
-
 ＊最小化解除
 \0\s[4]まさか強盗がくるなんて‥‥\n
 \1\s[13]この辺も治安が悪くなったな。
@@ -79,6 +80,10 @@
 ＃スリーブ解除
 ＃────────
 ＊OnSysResume
+＄手動セーブ	実行
+＞スリープ解除	（compare,（Reference0）,normal）
+
+＊スリープ解除
 \0\s[5]おはよう、（ユーザ名）。
 \1\s[15]よく眠れたか？\e
 
@@ -130,8 +135,11 @@
 ＃────────
 ＃マウスイベント
 ＃────────
+＊OnMouseClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+
 ＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ
+＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
 
 ＊OnMouseWheel
 ＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
@@ -144,7 +152,7 @@
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
-＊OnMouseDragStart
+＊OnMouseDragStart	（Status）!=talking
 ＞（Reference3）移動開始
 
 ＊0移動開始
@@ -373,11 +381,9 @@
 ＃見切れ・重なりイベント
 ＃────────
 ＊OnOverlap
-＞重なった	（重なり状態）==0
-＄重なり状態	０
+＞重なった	（is_empty,（Reference0））==0
 
 ＊重なった
-＄重なり状態	１
 \0\s[4]ちょっと‥‥離れてよ。\n
 \1\s[19]ちょっとだけ‥‥いいだろ？\n
 \0\s[9]（ユーザ名）の前でダメに決まってるでしょ！
