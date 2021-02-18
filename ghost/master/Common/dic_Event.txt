@@ -1,0 +1,235 @@
+＊OnCacheRestore
+＞OnSatoriLoad
+＊OnSatoriLoad
+＄文「＊」の重複回避	有効、起動中
+＄単語群「＊」の重複回避	直前、トーク中
+＄自動挿入ウェイトタイプ	一般
+＄自動アンカー	無効
+＄自動挿入ウェイトの倍率	１００％
+＄ダンジョン階層	１
+＄手動セーブ	実行
+
+＊OnCacheSuspend
+＞OnSatoriUnLoad
+＊OnSatoriUnload
+＄r_talk	
+＄もちもの	
+＄時報設定	
+＄メニューサイズ	
+＄0ちくピフラグ	
+＄1ちくピフラグ	
+＄重なり状態	
+＄手動セーブ	実行
+
+＃────────
+＃シェル変更
+＃────────
+＊OnShellChanging
+＞（Reference0）に変更する
+＞他のシェルに変更する
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＄手動セーブ	実行
+＞（Reference0）に変更した
+＞他のシェルに変更した
+
+＃────────
+＃着せ替え
+＃────────
+＊OnDressupChanged
+（when、（Reference2）==1
+	、（set,（Reference0）（Reference1）,1）
+	、（set,（Reference0）（Reference1）,）
+）
+（set,（Reference0）（Reference3）,）
+＄0淫具装備	
+＄1淫具装備	
+＄手動セーブ	実行
+＞（Reference0）（Reference1）を装備解除	（Reference2）==0
+＞（Reference0）が全裸になった	（Reference2）==0&&（（Reference0）全裸判定）==0
+＞（Reference0）（Reference1）を装備	（Reference2）
+
+＃────────
+＃最小化解除
+＃────────
+＊OnWindowStateMinimize
+＄手動セーブ	実行
+＊OnWindowStateRestore
+＄手動セーブ	実行
+＞最小化解除
+
+＃────────
+＃
+＃────────
+＊OnSurfaceRestore
+\0\s[（デフォルトサーフェス0）]\1\s[（デフォルトサーフェス1）]\e
+
+＃スリーブ解除
+＃────────
+＊OnSysResume
+＄手動セーブ	実行
+＞スリープ解除	（compare,（Reference0）,normal）
+
+＃────────
+＃入力
+＃────────
+＊OnCommunicate
+≫ユーザ「　（Reference1）	（compare,（Reference0）,user）
+
+＊OnUserInput
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＃────────
+＃時間イベント
+＃────────
+＊OnMinuteChange
+＞時報A	（TimeSignal）&&（現在分）==０
+
+＃────────
+＃■選択肢
+＃────────
+＊OnChoiceSelect
+＞（Reference0）
+＞選択先がない
+
+＊OnChoiceTimeout
+\0\s[4]ガーン、無視‥‥。\e
+
+＊OnAnchorSelect
+＞（Reference0）
+＞選択先がない
+
+＊選択先がない
+\0\s[3]選択肢（Reference0）は存在しないみたい\e
+
+＃────────
+＃マウスイベント
+＃────────
+＊OnMouseClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+
+＊OnMouseDoubleClick
+＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
+
+＊OnMouseWheel
+＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
+＞（Reference3）（Reference4）ころころ下方向	（Reference2）＜０
+＞（Reference3）（Reference4）ころころ
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	１
+
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
+
+＊OnMouseDragStart	（Status）!=talking
+＞（Reference3）移動開始
+
+＃────────
+＃インストール
+＃────────
+＊OnInstallBegin
+＞インストール開始
+
+＊OnInstallComplete
+＞（Reference0）インストール
+\0\s[0]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしたよ。\e
+
+＊OnInstallFailure
+\0\s[4]失敗みたい。
+\1\s[10]原因は「（Reference0）」だそうだ\e
+
+＊OnInstallRefuse
+\0\s[4]これ、「（replace（バイト値,１）（Reference0）（バイト値,１）\（バイト値,１）\\）」さんのよ。
+本人に渡してあげてね。\e
+
+＃────────
+＃見切れ・重なりイベント
+＃────────
+＊OnOverlap
+＞重なった	（is_empty,（Reference0））==0
+
+＃────────
+＃キー押下
+＃────────
+＊OnKeyPress
+＞（Reference0）が押された
+
+＃────────
+＃
+＃────────
+＊OnTalk
+＞（Reference1）	（Reference0）
+（）
+
+＃────────
+＃web拍手
+＃────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,,--limit=998]
+\0\e
+
+＊拍手送信内容を教えてもらった
+\0\_q（拍手送信内容）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容を空打ちされた]
+\_q\e
+
+＊SendClap
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠（拍手送信内容）",--async=webclap]
+＄拍手送信内容	
+
+＊OnWebClap2
+\![open,inputbox,コミュ提案,,--limit=995]
+\0\e
+
+＊コミュ提案を教えてもらった
+\0\_q（コミュ提案）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap2] \![*]\q[やめる,拍手送信内容を空打ちされた]
+\_q\e
+
+＊SendClap2
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママコミュ＠（コミュ提案）",--async=webclap]
+＄コミュ提案	
+
+＊簡易拍手1
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠いいね！",--async=webclap]
+＄拍手送信内容	
+＊簡易拍手2
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠えっち！",--async=webclap]
+＄拍手送信内容	
+＊簡易拍手2
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠好き！",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容を空打ちされた
+＄拍手送信内容	
+＄コミュ提案	
+\0φ（中断しますφ）\e
+
+＊コミュ提案を空打ちされた
+＄拍手送信内容	
+＄コミュ提案	
+\0φ（中断しますφ）\e
+
+＊OnExecuteHTTPComplete
+＞拍手送信完了	（Reference1）==webclap
+＊拍手送信完了
+\0\s[21]ありがとうね、（ユーザ名）。
+\1\s[115]嬉しいこと言ってくれるじゃないか。\e
+
+＊OnExecuteHTTPFailure
+＞拍手送信失敗	（Reference1）==webclap
+
+＊拍手送信失敗
+\0φ（（Reference4）φ）\e

@@ -15,6 +15,7 @@
 ＄現在シェル	master
 ＄ダンジョン階層	１
 ＄興奮度B	０
+＄対象者	0
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float

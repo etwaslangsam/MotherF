@@ -2,6 +2,7 @@
 ＃初回起動
 ＃────────
 ＊OnFirstBoot
+＄辞書フォルダ	.,Common
 \1（10）\0（22）ふぅ～、ただいまぁ～！
 \0いやぁ～今日のクエストも苦労したよぉ。\n[half]
 \1まさかあんなことになるとはな。
@@ -13,6 +14,7 @@
 ＃■起動
 ＃────────
 ＊OnBoot
+＄辞書フォルダ	.,Common
 ＞犬起動	（犬装備計算）==3
 ＞全裸夜起動	（現在時）＜５&&（calc,（0全裸判定）+（1全裸判定））==0
 ＞夜起動	（現在時）＜４
@@ -141,6 +143,7 @@
 ＞OnClose
 
 ＊OnGhostChanged
+＄辞書フォルダ	.,Common
 ＞再読込した	（compare,（Reference0）,ママ）
 ＞（Reference0）から交代
 ＞OnBoot
@@ -151,99 +154,107 @@
 ＊再読込した
 \0\s[22]はいお待たせ。\e
 
-＃────────
-＃Resources
-＃────────
-＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/MotherF/master/
 
 ＃────────
-＃おすすめサイト
+＃メニュー
 ＃────────
-＊sakura.recommendsites
-DLsite.com 同人RPGゲーム
-http://www.dlsite.com/maniax/fsr/=/work_type/RPG/work_category/doujin/from/left_pain.work_type
+＊0つつかれ
+\0\s[（デフォルトサーフェス0）]どうしたの？\w9
+＞メインメニュー
 
-＃────────
-＃ポータルサイト
-＃────────
-＊sakura.portalsites
-配布サイト
-https://hotpepar.blogspot.com/
+＊0つつかれ	（犬装備計算）==3
+\0\s[24]わん。\w9
+＞メインメニュー
 
+＊0つつかれ	（0狸装備計算）==2
+\0\s[1]ぽん。\w9
+＞メインメニュー
 
-＊sakura.portalsites
-バグ報告
-https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+＊メインメニュー
+\0\b[2]\c\_q
+\![*]\q[t)話を聞く,PleaseTalk]　\![*]\q[c)話しかける,話しかける]\n
+\![*]\q[今日の冒険記録,Extra_test]\n
+\![*]\q[名前を変更する,名前を教える]\n
+■トーク\n[half]
+ \![*]\q[オート,９０秒おき] ／ \q[マニュアル,TILevel0]\n
+■時報\n[half]
+ \![*]\q[お知らせする,時報オン] ／ \q[しない,時報オフ]\n
+■表示 ※ゴースト終了まで有効\n[half]
+ \![*]\q[常に手前に,常に手前に表示] ／ \q[奥に沈む,奥に沈む]\n[half]
+ \![*]\q[透明度を上げる,透明度を上げる] ／ \q[下げる,透明度を下げる]\n
+\q[なんでもないよ,◯なんでもないよ]
+\1■web拍手\n[half]
+ \![*]\q[メッセージを入力,OnWebClap]
+ \![*]\q[いいねφ！,簡易拍手1] ／ \q[えっちφ！,簡易拍手2] ／ \q[好きφ！,簡易拍手3]
+\_q\e
 
-
-＊sakura.portalsites
--
-
-＊sakura.portalsites
-独立伺か研究施設 ばぐとら研究所
-http://ssp.shillest.net/
-
-
-＊sakura.portalsites
-Disc-2
-http://disc2.s56.xrea.com/
-
-
-＊sakura.portalsites
-伺か情報ブログ「ghost-log」
-https://ghost-log.net/
-
-
-＊sakura.portalsites
-ゴーストキャプターさくら
-http://buynowforsale.shillest.net/ghosts/
-
-
-＊sakura.portalsites
-ゴースト回覧板3rd
-http://jbbs.shitaraba.net/computer/44300/
-
-
-＊sakura.portalsites
-伺的な感想やレビューのWiki
-https://ghost-info.net/dokuwiki/doku.php
-
-
-＊sakura.portalsites
-噂と評判[改] 過去ログ保管庫+
-https://ghostreview.sakura.ne.jp/
-
+＊◯なんでもないよ
+：\s[（デフォルトサーフェス0）]分かった。何かあったら呼んでね。\e
 
 ＃────────
-＃単語群
+＃■トーク
 ＃────────
-＠痙攣
-（times、5、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
+＊PleaseTalk
+（）
 
-＠吐息
-は――――――（はーと）\w9　は――――――（はーと）
-ふ――――――っ（はーと）\w9　ふ――――――っ（はーと）
+＃────────
+＃■ユーザ名変更
+＃────────
+＊名前を教える
+\![open,inputbox,ユーザ名]\e
 
-＠絶頂
-っ～～～～～～～～～～～～（はーと） 
-んっ～～～～～～～～～～～（はーと） 
-ぅ～～～～～～～～～～～～（はーと） 
+＊ユーザ名を教えてもらった
+＄手動セーブ	実行
+\0\s[21]（ユーザ名）（はーと）
+\1\s[15]（ユーザ名）。\e
 
-＠アイテム
-ディルド
-ポーション
-金の針
+＊ユーザ名を空打ちされた
+\e
 
-＠ランダム効果
-全ステータス10%上昇！
-全感度2%UP！
-淫乱度2倍！
-乳首感度2倍！
-陰核感度2倍！
-膣感度2倍！
-子宮感度2倍！
-肛門感度2倍！
-全身性感帯化！
-絶頂時ステータスUP！
-羞恥心-10％！
+＃────────
+＃■喋り頻度
+＃────────
+＊TILevel0
+＄喋り間隔	０秒
+＄手動セーブ	実行
+\0\s[20]それじゃあママ達のお話を聞きたい時は、メニューから「話を聞く」を選ぶか、キーボードのtを押してね。\e
+
+＊９０秒おき
+＄喋り間隔	９０秒
+＄喋り間隔誤差	５０％
+＄手動セーブ	実行
+\0\s[20]じゃあ、ママ達は勝手にお話してるね。\e
+
+＃────────
+＃時報設定
+＃────────
+＊時報オン
+＄TimeSignal	1
+＄手動セーブ	実行
+\0\s[21]じゃ、時報をオンにするね。\e
+
+＊時報オフ
+＄TimeSignal	0
+＄手動セーブ	実行
+\0\s[25]時報をオフにしたよ。\e
+
+＃────────
+＃隊列
+＃────────
+＊常に手前に表示
+\![set,windowstate,stayontop]
+\0\s[21]\cじゃあ、終了するまで前に出るわね。\e
+
+＊奥に沈む
+\![set,windowstate,!stayontop]
+\0\s[3]\cじゃあ、終了するまで裏に居るけど…大丈夫？\e
+
+＃────────
+＃透明度
+＃────────
+＊透明度を上げる
+\1\![set,alpha,50]SSP限定機能だ。\0\![set,alpha,50]\s[4]大丈夫、（ユーザ名）。
+寂しくない？\e
+
+＊透明度を下げる
+\1\![set,alpha,100]\0\![set,alpha,100]\s[22]はい、元に戻ったよ。\e
