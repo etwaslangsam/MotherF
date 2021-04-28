@@ -203,7 +203,7 @@
 ＄コミュ提案	
 
 ＊簡易拍手1
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠いいね！",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠おもしろい！",--async=webclap]
 ＄拍手送信内容	
 ＊簡易拍手2
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠えっち！",--async=webclap]
