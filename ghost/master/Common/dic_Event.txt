@@ -7,7 +7,6 @@
 ＄自動アンカー	無効
 ＄自動挿入ウェイトの倍率	１００％
 ＄ダンジョン階層	１
-＄手動セーブ	実行
 
 ＊OnCacheSuspend
 ＞OnSatoriUnLoad
@@ -19,11 +18,8 @@
 ＄0ちくピフラグ	
 ＄1ちくピフラグ	
 ＄重なり状態	
-＄手動セーブ	実行
 
-＃────────
-＃シェル変更
-＃────────
+＃────────シェル変更
 ＊OnShellChanging
 ＞（Reference0）に変更する
 ＞他のシェルに変更する
@@ -34,9 +30,7 @@
 ＞（Reference0）に変更した
 ＞他のシェルに変更した
 
-＃────────
-＃着せ替え
-＃────────
+＃────────着せ替え
 ＊OnDressupChanged
 （when、（Reference2）==1
 	、（set,（Reference0）（Reference1）,1）
@@ -48,9 +42,7 @@
 ＄手動セーブ	実行
 ＞装備を変更した
 
-＃────────
-＃最小化解除
-＃────────
+＃────────最小化解除
 ＊OnWindowStateMinimize
 ＄手動セーブ	実行
 ＊OnWindowStateRestore
@@ -58,20 +50,15 @@
 ＞最小化解除
 
 ＃────────
-＃
-＃────────
 ＊OnSurfaceRestore
 \0\s[（デフォルトサーフェス0）]\1\s[（デフォルトサーフェス1）]\e
 
-＃スリーブ解除
-＃────────
+＃────────スリーブ解除
 ＊OnSysResume
 ＄手動セーブ	実行
 ＞スリープ解除	（compare,（Reference0）,normal）
 
-＃────────
-＃入力
-＃────────
+＃────────入力
 ＊OnCommunicate
 ≫ユーザ「　（Reference1）	（compare,（Reference0）,user）
 
@@ -84,15 +71,11 @@
 ＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
-＃────────
-＃時間イベント
-＃────────
+＃────────時間イベント
 ＊OnMinuteChange
 ＞時報A	（TimeSignal）&&（現在分）==０
 
-＃────────
-＃■選択肢
-＃────────
+＃────────■選択肢
 ＊OnChoiceSelect
 ＞（Reference0）
 ＞選択先がない
@@ -107,9 +90,7 @@
 ＊選択先がない
 \0\s[3]選択肢（Reference0）は存在しないみたい\e
 
-＃────────
-＃マウスイベント
-＃────────
+＃────────マウスイベント
 ＊OnMouseClick
 ＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
 
@@ -130,9 +111,7 @@
 ＊OnMouseDragStart	（Status）!=talking
 ＞（Reference3）移動開始
 
-＃────────
-＃インストール
-＃────────
+＃────────インストール
 ＊OnInstallBegin
 ＞インストール開始
 
@@ -148,9 +127,7 @@
 \0\s[4]これ、「（replace（バイト値,１）（Reference0）（バイト値,１）\（バイト値,１）\\）」さんのよ。
 本人に渡してあげてね。\e
 
-＃────────
-＃見切れ・重なりイベント
-＃────────
+＃────────見切れ・重なりイベント
 ＊OnOverlap
 ＞重なった	（is_empty,（Reference0））==0
 
@@ -161,15 +138,11 @@
 ＞（Reference0）が押された
 
 ＃────────
-＃
-＃────────
 ＊OnTalk
 ＞（Reference1）	（Reference0）
 （）
 
-＃────────
-＃web拍手
-＃────────
+＃────────web拍手
 ＊OnWebClap
 \![open,inputbox,拍手送信内容,,--limit=998]
 \0\e
