@@ -2,7 +2,7 @@
 ＞OnSatoriLoad
 ＊OnSatoriLoad
 ＄文「＊」の重複回避	有効、起動中
-＄単語群「＊」の重複回避	直前、トーク中
+＄単語群「＊」の重複回避	有効、起動中
 ＄自動挿入ウェイトタイプ	一般
 ＄自動アンカー	無効
 ＄自動挿入ウェイトの倍率	１００％
@@ -91,11 +91,11 @@
 \0\s[3]選択肢（Reference0）は存在しないみたい\e
 
 ＃────────マウスイベント
-＊OnMouseClick
-＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+＊OnMouseClick	（Reference5）==0
+＞（Reference3）（Reference4）つつかれ	（is_empty,（Reference4））==0
 
-＊OnMouseDoubleClick
-＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
+＊OnMouseDoubleClick	（Reference5）==0
+＞（Reference3）つつかれ	（is_empty,（Reference4））
 
 ＊OnMouseWheel
 ＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
