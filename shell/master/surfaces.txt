@@ -9,11 +9,11 @@ surface0-9,20-39
 {
 element0,base,60000.png,0,0
 
-animation1.interval,bind
-animation1.pattern2,add,998,0,0,0
+animation0.interval,bind
+animation0.pattern2,add,998,0,0,0
 
-animation2.interval,bind
-animation2.pattern3,add,997,0,0,0
+animation1.interval,bind
+animation1.pattern3,add,997,0,0,0
 }
 
 surface0
@@ -288,17 +288,17 @@ animation8.pattern0,add,805,0,0,0
 
 surface.append0-9,20-39
 {
-collisionex6,Nipple,circle,269,318,5
-collisionex7,Nipple,circle,195,303,5
-collisionex0,Bust,polygon,224,275,202,286,192,298,193,311,200,321,213,324,230,316,247,320,253,331,265,334,279,334,289,327,292,310,291,294
-collisionex1,Fukkin,polygon,229,328,217,341,217,352,216,380,211,406,212,440,216,448,232,451,259,449,267,429,271,405,266,380,261,359,239,329
-collisionex2,Leg,polygon,208,423,213,445,227,461,236,469,246,483,259,486,263,467,276,443,287,432,303,424,301,437,307,456,310,459,316,452,322,451,328,453,324,607,167,606
-collisionex4,Pit,polygon,304,279,292,291,291,324,299,335,312,312,314,294
-collisionex5,Pussy,polygon,240,474,261,474,260,488,243,483
-collisionex3,Ear,polygon,318,175,300,207,358,175,353,170
-collisionex9,Face,polygon,223,164,224,207,241,222,258,231,263,232,297,214,303,198,305,163
+	collisionex6,Nipple,circle,269,318,5
+	collisionex7,Nipple,circle,195,303,5
+	collisionex0,Bust,polygon,224,275,202,286,192,298,193,311,200,321,213,324,230,316,247,320,253,331,265,334,279,334,289,327,292,310,291,294
+	collisionex1,Fukkin,polygon,229,328,217,341,217,352,216,380,211,406,212,440,216,448,232,451,259,449,267,429,271,405,266,380,261,359,239,329
+	collisionex2,Leg,polygon,208,423,213,445,227,461,236,469,246,483,259,486,263,467,276,443,287,432,303,424,301,437,307,456,310,459,316,452,322,451,328,453,324,607,167,606
+	collisionex4,Pit,polygon,304,279,292,291,291,324,299,335,312,312,314,294
+	collisionex5,Pussy,polygon,240,474,261,474,260,488,243,483
+	collisionex3,Ear,polygon,318,175,300,207,358,175,353,170
+	collisionex9,Face,polygon,223,164,224,207,241,222,258,231,263,232,297,214,303,198,305,163
 
-animation0.interval,bind
-animation0.pattern1,add,999,0,0,0
+//	animation0.interval,bind
+//	animation0.pattern1,add,999,0,0,0
 
 }

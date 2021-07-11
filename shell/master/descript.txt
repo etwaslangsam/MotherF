@@ -9,25 +9,17 @@ craftmanw,ちてた
 seriko.use_self_alpha,1
 
 //さくら//
-sakura.menuitem0,8
-sakura.menuitem1,7
-sakura.menuitem2,6
-sakura.menuitem3,5
-sakura.menuitem4,4
-sakura.menuitem5,3
-sakura.menuitem6,-
-sakura.menuitem7,1
-sakura.menuitem8,2
+sakura.menu,auto
 
-sakura.bindgroup0.name,下着,パンツ,pantsu
+//sakura.bindgroup0.name,下着,パンツ,pantsu
+//sakura.bindgroup0.default,0
+
+sakura.bindgroup0.name,装備,布の服,tikupi
 sakura.bindgroup0.default,0
+sakura.bindgroup1.name,装備,ちくびピアス,chain
+sakura.bindgroup1.default,1
 
-sakura.bindgroup1.name,装備,布の服,tikupi
-sakura.bindgroup1.default,0
-sakura.bindgroup2.name,装備,ちくびピアス,chain
-sakura.bindgroup2.default,1
-
-sakura.bindoption0.group,目,mustselect
+sakura.bindoption0.group,目,mustselec
 sakura.bindgroup3.name,目,白眼,glass
 sakura.bindgroup3.default,0
 sakura.bindgroup4.name,目,糸眼,strings
@@ -42,14 +34,7 @@ sakura.bindgroup8.name,目,普通眼,strings
 sakura.bindgroup8.default,0
 
 //ケロ//
-kero.menuitem0,3
-kero.menuitem1,5
-kero.menuitem2,6
-kero.menuitem3,7
-kero.menuitem4,4
-kero.menuitem5,-
-kero.menuitem6,1
-kero.menuitem7,0
+kero.menu,auto
 
 kero.bindgroup0.name,装備,布の服,strings
 kero.bindgroup0.default,0

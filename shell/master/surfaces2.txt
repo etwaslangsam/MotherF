@@ -45,9 +45,6 @@ surface210-219,240-249
 {
 	element0,base,30000.png,0,0
 
-//	animation0.interval,bind
-//	animation0.pattern0,add,825,0,0,0
-
 	animation1.interval,bind
 	animation1.pattern0,add,836,0,0,0
 	
