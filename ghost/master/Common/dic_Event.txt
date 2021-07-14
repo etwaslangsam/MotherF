@@ -31,16 +31,13 @@
 ＞他のシェルに変更した
 
 ＃────────着せ替え
-＊OnDressupChanged
-（when、（Reference2）==1
-	、（set,（Reference0）（Reference1）,1）
-	、（set,（Reference0）（Reference1）,）
-）
-（set,（Reference0）（Reference3）,）
-＄0淫具装備	
-＄1淫具装備	
-＄手動セーブ	実行
-＞装備を変更した
+＊OnDressupChanged	（Reference2）==1
+（set,（Reference0）（Reference1）,1）（set,手動セーブ,実行）
+＞（Reference0）装備した
+
+＊OnDressupChanged	（Reference2）==0
+（set,（Reference0）（Reference1）,）（set,手動セーブ,実行）
+＞（Reference0）解除した
 
 ＃────────最小化解除
 ＊OnWindowStateMinimize
