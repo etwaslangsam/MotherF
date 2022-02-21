@@ -1,0 +1,57 @@
+＃────────ネットワーク更新
+＊OnUpdateBegin
+\0\s[20]更新情報を取得中してるよ。
+
+＊OnUpdateReady
+\0\s[20]（Reference0）個のファイルが更新されてるね。
+（when,（Reference0）＞４,\s[22]すごい！\w3 いっぱい来たね～（ユーザ名）！）
+\1\s[18]はい、じゃあファイル鑑定しま～す。
+
+
+＊OnUpdate.OnMD5CompareComplete
+\1\s[10]\_q（Reference1）
+（Reference2）
+\_q
+問題なし。
+
+＊OnUpdate.OnMD5CompareFailure
+\1\s[10]\_q（Reference1）
+（Reference2）
+\_q
+（Reference0）問題あり。
+
+
+＊OnUpdateComplete
+＄辞書フォルダ	.,Common
+＄辞書リロード	実行
+＄手動セーブ	実行
+＞ネットワーク更新（Reference0）
+\0\s[5]成功したよ。
+
+＊ネットワーク更新none
+\0\s[20]更新はなかったみたい。\e
+
+＊ネットワーク更新changed
+\0\s[21]更新完了。
+\1\s[15]呪われた更新ファイルはなかったようだな。\e
+
+
+＊OnUpdateFailure
+＞ネットワーク更新（Reference0）
+\0\s[4]ネットワーク更新に失敗しちゃった。
+\1\s[10]理由は（Reference0）だそうだ。\e
+
+＊ネットワーク更新timeout
+\0\s[3]時間切れみたい。
+重すぎてファイルが落ちてこないよ。
+\1\s[10]更新先URLが間違っていて、サーバが存在しない可能性もあるな。\e
+
+＊ネットワーク更新md5 miss
+\0\s[3]データが一致しなかったよ。
+回線状態が悪いのか、updates2.dauがおかしいのかも。\e
+
+＊ネットワーク更新404
+\0\s[4]更新用ファイルが見つからなかったよ。\e
+
+＊ネットワーク更新artificial
+\0\s[3]中断するよ。\e

@@ -4,8 +4,6 @@ ghost\master\dic_Time.txt
 shell\master\surface00.apng
 ghost\master\dic_String.txt
 shell\master\readme2.txt
-ghost\master\dic_Menu.txt
 ghost\master\dic_Event.txt
-ghost\master\dic_Dressup.txt
 ghost\master\dic_Menu2.txt
 ghost\master\dic_Mouse2.txt
