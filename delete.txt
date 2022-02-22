@@ -6,4 +6,3 @@ ghost\master\dic_String.txt
 shell\master\readme2.txt
 ghost\master\dic_Event.txt
 ghost\master\dic_Menu2.txt
-ghost\master\dic_Mouse2.txt
