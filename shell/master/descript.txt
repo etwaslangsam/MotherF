@@ -8,6 +8,22 @@ craftmanw,‚¿‚Ä‚½
 
 seriko.use_self_alpha,1
 
+menu.background.bitmap.filename,menu_foreground.png
+menu.foreground.bitmap.filename,menu_background.png
+menu.sidebar.bitmap.filename,menu_sidebar.png
+
+menu.background.font.color.r,255
+menu.background.font.color.g,255
+menu.background.font.color.b,255
+
+menu.foreground.font.color.r,255
+menu.foreground.font.color.g,255
+menu.foreground.font.color.b,255
+
+menu.separator.color.r,100
+menu.separator.color.g,100
+menu.separator.color.b,100
+
 //‚³‚­‚ç//
 sakura.menu,auto
 
