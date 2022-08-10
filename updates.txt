@@ -137,7 +137,6 @@ file,shell/master/menu_foreground.pngeffd8fc7ecd13fa7766c55d04707757dsize=1209
 file,shell/master/menu_sidebar.png2806236b824968aa9230baa9d09f0c28size=3122
 file,shell/master/readme.txtc6072648d96b690a087badcb90814ac8size=1355
 file,shell/master/readme2.txt2899b033603080a1da4453b2609cf200size=400
-file,shell/master/sb.pngb7564e48d16af1681068df26179511c6size=7135
 file,shell/master/surface0.apngf22b42e4a1121e5c39b2dd016603ded8size=192361
 file,shell/master/surface10.apng0b49fc68b167426edd984f434747e9bcsize=35154
 file,shell/master/surface10.pngbf2dd0535994aa0facc7a0e7504c6bb4size=103
