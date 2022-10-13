@@ -145,3 +145,6 @@ https://ghostreview.sakura.ne.jp/
 ゴースト
 ドラゴン
 ミノタウロス
+
+＠ユーザ名文字数
+（length，（ユーザ名））
