@@ -69,16 +69,22 @@
 ＞時報A	（TimeSignal）&&（現在分）==０
 
 ＃────────■選択肢
-＊OnChoiceSelect
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞（Reference0）
+＞選択先がない
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
 ＞（Reference0）
 ＞選択先がない
 
 ＊OnChoiceTimeout
 \0\s[4]ガーン、無視‥‥。\e
-
-＊OnAnchorSelect
-＞（Reference0）
-＞選択先がない
 
 ＊選択先がない
 \0\s[3]選択肢（Reference0）は存在しないみたい\e
@@ -124,9 +130,7 @@
 ＊OnOverlap
 ＞重なった	（is_empty,（Reference0））==0
 
-＃────────
-＃キー押下
-＃────────
+＃────────キー押下
 ＊OnKeyPress
 ＞（Reference0）が押された
 
@@ -136,11 +140,18 @@
 （）
 
 ＃────────web拍手
+＠WCM_URL
+https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9_wwskSn9l1oAAaN216XusA9siAX/exec
+＠送信元
+ママ
+
 ＊OnWebClap
-\![open,inputbox,拍手送信内容,,--limit=998]
+\![open,inputbox,拍手送信内容,--timeout=-1,,--limit=800]
 \0\e
 
 ＊拍手送信内容を教えてもらった
+＄送信内容	（Reference1）
+＄メモ	手動
 \0\_q（拍手送信内容）\_q
 \1（この内容で送信します）
 \_q
@@ -148,47 +159,26 @@
 \_q\e
 
 ＊SendClap
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠（拍手送信内容）",--async=webclap]
-＄拍手送信内容	
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（送信内容）;（メモ）",--async=webclap,--timeout=5]
 
-＊OnWebClap2
-\![open,inputbox,コミュ提案,,--limit=995]
-\0\e
+＊簡易拍手
+＄メモ	定型
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（選択ラベル）;（メモ）",--async=webclap]
 
-＊コミュ提案を教えてもらった
-\0\_q（コミュ提案）\_q
-\1（この内容で送信します）
-\_q
-\![*]\q[送信する,SendClap2] \![*]\q[やめる,拍手送信内容を空打ちされた]
-\_q\e
-
-＊SendClap2
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママコミュ＠（コミュ提案）",--async=webclap]
-＄コミュ提案	
-
-＊簡易拍手1
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠おもしろい！",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手2
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠えっち！",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手2
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ママ＠好き！",--async=webclap]
-＄拍手送信内容	
 
 ＊拍手送信内容を空打ちされた
 ＄拍手送信内容	
-＄コミュ提案	
 \0φ（中断しますφ）\e
 
 ＊コミュ提案を空打ちされた
 ＄拍手送信内容	
-＄コミュ提案	
 \0φ（中断しますφ）\e
 
 ＊OnExecuteHTTPComplete
 ＞拍手送信完了	（Reference1）==webclap
+
 ＊拍手送信完了
+＄拍手送信内容	
 \0\s[21]ありがとうね、（ユーザ名）。
 \1\s[115]嬉しいこと言ってくれるじゃないか。\e
 
@@ -196,4 +186,5 @@
 ＞拍手送信失敗	（Reference1）==webclap
 
 ＊拍手送信失敗
+＄拍手送信内容	
 \0φ（（Reference4）φ）\e
