@@ -48,10 +48,11 @@ surface210-219,240-249
 	animation1.interval,bind
 	animation1.pattern0,add,836,0,0,0
 	
-	collision1,133,243,170,306,Bust
-	collision2,234,441,269,470,Pussy
-	collision5,209,374,324,427,Hip
-	collision6,257,427,273,443,Ass
+	collisionex1,Nipple,polygon,142,263,143,270,141,275,138,277,135,270,138,266
+	collisionex2,Bust,polygon,164,245,136,268,139,286,144,294,150,301,160,278
+	collisionex3,Hip,polygon,269,366,299,381,302,394,290,407,270,410,265,426,254,417,237,419,231,413,222,402,225,386,228,373,228,365,248,370
+	collisionex4,Ass,ellipse,260,429,269,441
+	collisionex5,Pussy,polygon,261,441,254,447,243,450,240,458,240,466,251,469,260,464,266,456,269,451
 	collision7,167,161,199,185,Mouth
 
 }

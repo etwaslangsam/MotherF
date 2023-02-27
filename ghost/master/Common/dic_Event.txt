@@ -18,6 +18,8 @@
 ＄0ちくピフラグ	
 ＄1ちくピフラグ	
 ＄重なり状態	
+＄0眼一時保存	
+＄1眼一時保存	
 
 ＃────────シェル変更
 ＊OnShellChanging
@@ -34,6 +36,7 @@
 ＊OnDressupChanged	（Reference2）==1
 （when，（Reference2）==1，（set,（Reference0）（Reference1）,1））
 （when，（Reference3）==目，（set,（Reference0）目,（Reference1））（set,（Reference0）（Reference1）,））
+（when，（Reference3）==装備，（set,（Reference0）装備,（Reference1））（set,（Reference0）（Reference1）,））
 （when，（Reference3）==頭装備，（set,（Reference0）頭装備,（Reference1））（set,（Reference0）（Reference1）,））
 （when，（Reference3）==上装備，（set,（Reference0）上装備,（Reference1））（set,（Reference0）（Reference1）,））
 （when，（Reference3）==下装備，（set,（Reference0）下装備,（Reference1））（set,（Reference0）（Reference1）,））
@@ -44,6 +47,7 @@
 
 ＊OnDressupChanged	（Reference2）==0
 （when，（Reference2）==0，（set,（Reference0）（Reference1）,））
+（when，（Reference3）==装備，（set,（Reference0）装備,））
 （when，（Reference3）==頭装備，（set,（Reference0）頭装備,））
 （when，（Reference3）==上装備，（set,（Reference0）上装備,））
 （when，（Reference3）==下装備，（set,（Reference0）下装備,））

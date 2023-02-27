@@ -31,40 +31,31 @@ sakura.menu,auto
 //sakura.bindgroup0.default,0
 
 sakura.bindgroup0.name,装備,布の服,tikupi
-sakura.bindgroup0.default,0
 sakura.bindgroup1.name,装備,ちくびピアス,chain
 sakura.bindgroup1.default,1
 
-sakura.bindoption0.group,目,mustselec
+sakura.bindoption0.group,目,mustselect
+
 sakura.bindgroup3.name,目,白眼,glass
-sakura.bindgroup3.default,0
 sakura.bindgroup4.name,目,糸眼,strings
-sakura.bindgroup4.default,1
 sakura.bindgroup5.name,目,四白眼,strings
-sakura.bindgroup5.default,0
 sakura.bindgroup6.name,目,トカゲ眼,strings
-sakura.bindgroup6.default,0
 sakura.bindgroup7.name,目,ぐるぐる眼,strings
-sakura.bindgroup7.default,0
 sakura.bindgroup8.name,目,普通眼,strings
-sakura.bindgroup8.default,0
+sakura.bindgroup8.default,1
 
 //ケロ//
 kero.menu,auto
 
 kero.bindgroup0.name,装備,布の服,strings
-kero.bindgroup0.default,0
 kero.bindgroup1.name,装備,ちくびピアス,strings
 kero.bindgroup1.default,1
 
 kero.bindoption1.group,目,mustselect
+
 kero.bindgroup3.name,目,普通眼,glass
-kero.bindgroup3.default,0
 kero.bindgroup4.name,目,閉じ眼,strings
-kero.bindgroup4.default,0
 kero.bindgroup5.name,目,ぐるぐる眼,strings
-kero.bindgroup5.default,0
 kero.bindgroup6.name,目,洗脳眼,strings
-kero.bindgroup6.default,0
 kero.bindgroup7.name,目,ジト眼,strings
 kero.bindgroup7.default,1
