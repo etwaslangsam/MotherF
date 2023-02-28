@@ -1,5 +1,15 @@
 ＊OnTranslate	（equal，（デフォルトサーフェス0），247）
 ＄TranslateTalk	（Reference0）
+＄TranslateTalk	（replace，（TranslateTalk），\s[10]，\s[210]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[11]，\s[211]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[12]，\s[212]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[13]，\s[213]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[14]，\s[214]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[15]，\s[215]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[16]，\s[216]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[17]，\s[217]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[18]，\s[218]）
+＄TranslateTalk	（replace，（TranslateTalk），\s[19]，\s[219]）
 ＄TranslateTalk	（replace，（TranslateTalk），\s[40]，\s[240]）
 ＄TranslateTalk	（replace，（TranslateTalk），\s[41]，\s[241]）
 ＄TranslateTalk	（replace，（TranslateTalk），\s[42]，\s[242]）
