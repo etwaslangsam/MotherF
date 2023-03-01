@@ -112,11 +112,8 @@
 \0\s[3]選択肢（Reference0）は存在しないみたい\e
 
 ＃────────マウスイベント
-＊OnMouseClick	（Reference5）==0
-＞（Reference3）（Reference4）つつかれ	（is_empty,（Reference4））==0
-
-＊OnMouseDoubleClick	（Reference5）==0
-＞（Reference3）つつかれ	（is_empty,（Reference4））
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0
 
 ＊OnMouseWheel
 ＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
