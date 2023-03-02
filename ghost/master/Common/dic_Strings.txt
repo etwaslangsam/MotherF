@@ -6,23 +6,23 @@ https://raw.githubusercontent.com/etwaslangsam/MotherF/master/
 0
 
 ＃────────おすすめサイト
-＊sakura.recommendsites
-DLsite.com 同人RPGゲーム
-http://www.dlsite.com/maniax/fsr/=/work_type/RPG/work_category/doujin/from/left_pain.work_type
-
-＃────────ポータルサイト
-＊sakura.portalsites
+＠recommendrootbutton.caption
 配布サイト
+
+＊sakura.recommendsites
+ほっとぺっぱぁ団
 https://hotpepar.blogspot.com/
 
 
-＊sakura.portalsites
-バグ報告
+＊sakura.recommendsites
+お問い合わせ
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 
-＊sakura.portalsites
--
+
+＃────────ポータルサイト
+＠portalrootbutton.caption
+伺か関連サイト
 
 ＊sakura.portalsites
 独立伺か研究施設 ばぐとら研究所
