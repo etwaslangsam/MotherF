@@ -17,6 +17,7 @@
 ＄興奮度B	０
 ＄対象者	0
 ＄\1えっちモード	0
+＄\1名前	おねーさん
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
