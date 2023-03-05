@@ -115,6 +115,9 @@
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ	（Reference5）==0
 
+＊OnMouseClickEx
+＞（Reference3）（Reference4）ころクリ	（equal，（Reference5），middle）
+
 ＊OnMouseWheel
 ＞（Reference3）（Reference4）ころころ上方向	（Reference2）＞０
 ＞（Reference3）（Reference4）ころころ下方向	（Reference2）＜０
