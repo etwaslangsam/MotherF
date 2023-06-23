@@ -7,6 +7,7 @@
 ＄自動アンカー	無効
 ＄自動挿入ウェイトの倍率	１００％
 ＄ダンジョン階層	１
+＄引数区切り追加	（sprintf,%c,3）
 
 ＊OnCacheSuspend
 ＞OnSatoriUnLoad
