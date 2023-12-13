@@ -35,27 +35,25 @@
 
 ＃────────着せ替え
 ＊OnDressupChanged	（Reference2）==1
-（when，（Reference2）==1，（set,（Reference0）（Reference1）,1））
-（when，（Reference3）==目，（set,（Reference0）目,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==装備，（set,（Reference0）装備,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==頭装備，（set,（Reference0）頭装備,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==上装備，（set,（Reference0）上装備,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==下装備，（set,（Reference0）下装備,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==腰装備，（set,（Reference0）腰装備,（Reference1））（set,（Reference0）（Reference1）,））
-（when，（Reference3）==足装備，（set,（Reference0）足装備,（Reference1））（set,（Reference0）（Reference1）,））
-（set,手動セーブ,実行）
+（whenlist，（Reference3）==
+	，その他，（set,（Reference0）（Reference1）,1）
+	，体装備，（set,（Reference0）（Reference1）,1）
+	，（set,（Reference0）（Reference3）,（Reference1））
+）（set,手動セーブ,実行）
 ＞（Reference0）_（Reference1）_（Reference2）	（count，（Status），talking）==0
 
 ＊OnDressupChanged	（Reference2）==0
-（when，（Reference2）==0，（set,（Reference0）（Reference1）,））
-（when，（Reference3）==装備，（set,（Reference0）装備,））
-（when，（Reference3）==頭装備，（set,（Reference0）頭装備,））
-（when，（Reference3）==上装備，（set,（Reference0）上装備,））
-（when，（Reference3）==下装備，（set,（Reference0）下装備,））
-（when，（Reference3）==腰装備，（set,（Reference0）腰装備,））
-（when，（Reference3）==足装備，（set,（Reference0）足装備,））
-（set,手動セーブ,実行）
+（whenlist，（Reference3）==
+	，その他，（set,（Reference0）（Reference1）,）
+	，体装備，（set,（Reference0）（Reference1）,）
+	，（set,（Reference0）（Reference3）,）
+）（set,手動セーブ,実行）
 ＞（Reference0）_（Reference1）_（Reference2）	（count，（Status），talking）==0
+
+
+＊OnNotifyDressupInfo
+＄Dressup_Total	
+（times，（Rの数），（nop,（split、（Reference（C０））、（バイト値、１）、0、1））（set,Dressup_No（C０）,））
 
 
 ＃────────最小化解除
