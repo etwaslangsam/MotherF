@@ -74,10 +74,6 @@
 ＞（Reference0）をタイムアウト	（compare（バイト値,１）（Reference1）（バイト値,１）timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
-＃────────時間イベント
-＊OnMinuteChange
-＞時報A	（TimeSignal）&&（現在分）==０
-
 ＃────────■選択肢
 ＊OnChoiceSelectEx
 ＄選択ラベル	（Reference0）
