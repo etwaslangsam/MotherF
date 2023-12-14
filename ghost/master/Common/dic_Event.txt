@@ -34,23 +34,6 @@
 ＞他のシェルに変更した
 
 ＃────────着せ替え
-＊OnDressupChanged	（Reference2）==1
-（whenlist，（Reference3）==
-	，その他，（set,（Reference0）（Reference1）,1）
-	，体装備，（set,（Reference0）（Reference1）,1）
-	，（set,（Reference0）（Reference3）,（Reference1））
-）（set,手動セーブ,実行）
-＞（Reference0）_（Reference1）_（Reference2）	（count，（Status），talking）==0
-
-＊OnDressupChanged	（Reference2）==0
-（whenlist，（Reference3）==
-	，その他，（set,（Reference0）（Reference1）,）
-	，体装備，（set,（Reference0）（Reference1）,）
-	，（set,（Reference0）（Reference3）,）
-）（set,手動セーブ,実行）
-＞（Reference0）_（Reference1）_（Reference2）	（count，（Status），talking）==0
-
-
 ＊OnNotifyDressupInfo
 ＄Dressup_Total	
 （times，（Rの数），（nop,（split、（Reference（C０））、（バイト値、１）、0、1））（set,Dressup_No（C０）,））
