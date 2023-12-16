@@ -7,3 +7,4 @@ shell\master\readme2.txt
 ghost\master\dic_Event.txt
 ghost\master\dic_Menu2.txt
 ghost\master\dic_Dressup1.txt
+ghost\master\dic_Menue1.txt

@@ -5,8 +5,8 @@ craftman,etwaslangsam
 craftmanw,てにてに
 craftmanurl,https://hotpepar.blogspot.jp/
 readme,readme.txt
-sakura.name,ママ
-kero.name,ママの友達
+sakura.name,リア
+kero.name,ネイ
 sakura.seriko.defaultsurface,20
 kero.seriko.defaultsurface,10
 balloon.defaultsurface,0
@@ -25,6 +25,7 @@ don't need seriko talk,0
 balloon.dontmove,False
 icon,me.ico
 shiori,satori.dll
+install.accept,ママ
 
 
 
