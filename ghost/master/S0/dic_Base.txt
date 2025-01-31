@@ -1,0 +1,209 @@
+＃────────シェル変更
+＊他のシェルに変更する
+\0\s[21]ちょっと待っててね？\e
+＊他のシェルに変更した
+\0\s[23]\cおまたせ。いい子にしてた？\e
+
+＊masterに変更した
+\0\s[0]（whenlist，（0目）==
+	，ハート眼，\![bind,目,普通眼,1]（set,0目,普通眼）
+	，閉じ眼，\![bind,目,普通眼,1]（set,0目,普通眼）
+	，三白眼，\![bind,目,四白眼,1]（set,0目,四白眼）
+	，\![bind,目,（0眼）,1]
+）（when，（0上装備）==純銀のピアス，\![bind,装備,ちくびピアス,1]）
+\1\s[10]（whenlist，（1目）==
+	，ハート眼，\![bind,目,普通眼,1]（set,1目,普通眼）
+	，糸眼，\![bind,目,普通眼,1]（set,1目,普通眼）
+	，\![bind,目,（1目）,1]
+）
+＞他のシェルに変更した
+
+＊あぶない装備に変更した
+\0\s[0]（whenlist，（0目）==，四白眼，\![bind,目,三白眼,1]（set,0目,三白眼），\![bind,目,（0目）,1]）\1\s[11]\![bind,目,（1目）,1]
+\c（ユーザ名）にはちょっと刺激が強すぎるかもしれんな。\e
+
+
+＃────────バルーン変更
+＊OnBalloonChange
+\0\s[20]バルーン「（Reference0）」を装備したよ。\e
+
+＃────────最小化解除
+＊最小化解除
+\0\s[4]まさか強盗がくるなんて‥‥\w9
+\s[7]なんにせよ（ユーザ名）の平和を脅かす奴は皆殺しよ。\e
+
+＃────────スリーブ解除
+＊スリープ解除
+\0\s[5]おはよう、（ユーザ名）。\e
+
+＃────────時間イベント
+＊OnMinuteChange
+
+＊OnHourTimeSignal	（TimeSignal）&&（現在分）＜６
+（whenlist，（Sender）==
+	，SSP，\![set,trayballoon,--text=ママは冒険者,--title=（現在時）時,--icon=info,--timeout=3]
+	，\0\s[20]（現在時）時になったよ。\w9
+）
+
+＃────────インストール
+＊インストール開始
+\0\s[20]インストールするね。
+
+＊ghostインストール
+\0\s[21]あら、新しい子が来たみたいね。
+\s[25]お友達になれるといいわね（ユーザ名）。\n[half]
+\1\s[115]裸の付き合いをすれば一発だ。
+\0\s[7]ダメに決まってんでしょ！\e
+
+＊sellインストール
+\0\s[3]ん？\w3 新しい装備？
+\1\s[13]え～？\w5
+着込む系は嫌だぞ？\e
+
+＃────────ファイルドロップ
+＊OnUpdatedataCreating
+\0\s[21]更新ファイルを作成するね。
+
+＊OnUpdatedataCreated
+\0\s[22]更新ファイルを作成したよ。\w5
+更新するの？\w3 えらいえらい（はーと）\e
+
+＊OnNarCreating
+\0\s[21]narファイルを作るよ。
+
+＊OnNarCreated
+\0\s[22]narファイルが出来上がったよ！\w5
+すごいね～（ユーザ名）は（はーと）\e
+
+＃────────URLドロップイベント
+＊OnURLDropping
+\0\s[0]「（Reference0）」からダウンロードするね。
+
+＊OnURLDropped
+\0\s[5]ダウンロードが終わったよ。
+\1\s[10]ファイルは「（Reference0）」にあるぞ。\e
+
+＊OnURLDropFailure
+\0\s[4]ダウンロードに失敗・・・。
+\1\s[10]原因は「（Reference1）」だそうだ。\e
+
+
+＃────────時計合わせ
+＊OnSNTPBegin
+\0（Reference0）
+
+＊OnSNTPCompare
+＞ズレなし	（Reference3）==0
+\6
+
+＊ズレなし
+\e
+
+＊OnSNTPCorrect
+\0\s[21]（Reference3）秒のズレを修正したよ。\e
+
+＊OnSNTPFailure
+\0\s[3]サーバとの接続に失敗したみたい。\e
+
+＃────────メールチェック
+＊OnBIFFBegin
+\0\s[21]（Reference2）のメールをチェックするね。
+
+＊OnBIFFComplete
+＞メールなし	（Reference0）==0
+＞メールが増えた	（Reference3）＞0
+\0\s[22]未読メールが（Reference0）件あるよ。
+\_q
+ \![*]\q[メーラーを開く,メーラーを開く]
+ \![*]\q[なにもしない,なにもしない]
+\_q\e
+
+＊メールが増えた
+\0\s[22]新着メールが（Reference3）件あるよ。
+\_q
+ \![*]\q[メーラーを開く,メーラーを開く]
+ \![*]\q[なにもしない,なにもしない]
+\_q\e
+
+＊メールなし
+\0\s[20]メールはないみたい。\e
+
+＊メーラーを開く
+\![open,mailer,]
+＊なにもしない
+\0\e
+
+＃────────ヘッドライン
+＊OnHeadlinesenseBegin
+\0\s[20]（Reference0）を巡回中…
+
+＊OnHeadlinesense.OnFind
+＞読み上げフェーズ（Reference2）
+
+＊読み上げフェーズFirst
+\0\b[2]（Reference0）\![set,autoscroll,disable]\n[half]
+（Reference3）
+＿続きを読む		
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズFirst and Last
+\0\b[2]（Reference0）\![set,autoscroll,disable]\n[half]
+（Reference3）
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズLast
+\0\b[2]\![set,autoscroll,disable]（Reference3）
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊読み上げフェーズNext
+\0\b[2]\![set,autoscroll,disable]（Reference3）
+＿続きを読む		
+\![*]\q[サイトを開く,（Reference1）]
+\![*]\q[やめる,読み上げ中止]
+
+＊サイトを開く
+\![open,browzer,]
+＊読み上げ中止
+\0\e
+
+＊OnHeadlinesenseComplete
+\0\s[3]新着記事はないみたい。\e
+
+＃────────キー押下
+＊rが押された
+＄辞書リロード	実行
+\![set,zorder,1,0]
+\1\s[（デフォルトサーフェス1）]\0\s[（デフォルトサーフェス0）]リロードしたよ。\e
+
+＊mが押された
+＞メインメニュー
+
+＊tが押された
+＄R_Talk	（）
+（R_Talk）
+
+＊cが押された
+＞話しかける
+
+＃────────Resources
+＠updatebutton.visible
+0
+＠sntpbutton.visible
+1
+＠shellrootbutton.visible
+0
+＠quitbutton.visible
+1
+＠ghostrootbutton.visible
+1
+＠biffbutton.visible
+0
+＠closebutton.visible
+1
+＠ghosthistorybutton.visible
+1
+＠dressuprootbutton.visible
+1
