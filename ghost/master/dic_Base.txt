@@ -51,8 +51,6 @@
 \1\s[15]よく眠れたか？\e
 
 ＃────────時間イベント
-＊OnMinuteChange
-
 ＊OnHourTimeSignal	（TimeSignal）&&（現在分）＜６
 （whenlist，（Sender）==
 	，SSP，\![set,trayballoon,--text=ママは冒険者,--title=（現在時）時,--icon=info,--timeout=3]
