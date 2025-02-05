@@ -1,3 +1,3 @@
-（はーと）	\f[name,メイリオ]\f[color,hotpink]\_u[0x2665]\f[default]
+（はーと）	\f[name,メイリオ]\_u[0x1FA77]\f[default]
 
 ＃　ウェイトを全角で打てるようにする
